@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_second.*
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -18,7 +20,10 @@ class SecondFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_second, container, false)
+        val textview_second: TextView = view.findViewById(R.id.textview_second)
+        registerForContextMenu(textview_second)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,11 +1,9 @@
 package ru.samsung.itschool.a3_9_practical_work
 
 import android.os.Bundle
-import android.view.ActionMode
+import android.view.*
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 
@@ -65,4 +63,20 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        //menuInflater.inflate(R.menu.menu_main, menu)
+        menu!!.add(Menu.NONE, 101, Menu.NONE, "Открыть");
+        menu!!.add(Menu.NONE, 102, Menu.NONE, "Сохранить");
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        Toast.makeText(applicationContext, "ContextMenuItem click!", Toast.LENGTH_SHORT).show()
+        return when (item.itemId) {
+            R.id.action_settings -> true
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
 }
