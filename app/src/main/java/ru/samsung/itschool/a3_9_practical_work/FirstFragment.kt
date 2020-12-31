@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
 /**
@@ -17,8 +18,12 @@ class FirstFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        val view:View = inflater.inflate(R.layout.fragment_first, container, false)
+        val textViewFirst: TextView = view.findViewById(R.id.textview_first)
+        var str=""
+        for(i in 1..100) str+=i.toString()+") string \n"
+        textViewFirst.text=str
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
