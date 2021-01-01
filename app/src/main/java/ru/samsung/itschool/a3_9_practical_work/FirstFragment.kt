@@ -19,6 +19,7 @@ class FirstFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val view:View = inflater.inflate(R.layout.fragment_first, container, false)
+        // делаем многострочный TextView для скроллинга
         val textViewFirst: TextView = view.findViewById(R.id.textview_first)
         var str=""
         for(i in 1..100) str+=i.toString()+") string \n"

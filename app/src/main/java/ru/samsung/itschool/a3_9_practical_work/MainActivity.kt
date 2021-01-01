@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onActionItemClicked(p0: ActionMode?, p1: MenuItem?): Boolean {
+                // здесь обрабатываются клики на элементы контекстного AppBar
                 p0!!.finish()
                 return false
             }
